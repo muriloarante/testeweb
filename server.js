@@ -13,7 +13,8 @@ app.get('/testando', (req, res) => {
 });
 
 app.post('/testando2', (req, res) => {
-  const text = req.body.texto;
+  let text = req.body.texto;
+  text = text.toUpperCase();
 
   res.json({
     mensagem: text
