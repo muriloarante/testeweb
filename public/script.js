@@ -26,7 +26,7 @@ form1.addEventListener("submit", e => {
     })
     .then(response => response.json())
     .then(data => {
-        res.innerText = `Parece que você digitou, só que em maiusculo: ${data.mensagem}`;
+        res.innerText = `Texto que você digitou, só que em maiúsculo: ${data.mensagem}`;
     })
     .catch(e => {
         console.error(e);
