@@ -1,34 +1,23 @@
-const btn1 = document.getElementById("btn1");
+const btnTest = document.getElementById("btn-test");
 const form1 = document.getElementById("form1");
 const res = document.getElementById("res");
+const testRes = document.getElementById("test-res")
 
-
-btn1.addEventListener("click", ()=>{
-    const msg = document.createElement('p');
-    msg.textContent = "É, tá funcionando";
-
-    document.body.appendChild(msg);
-});
-
-form1.addEventListener("submit", e => {
+btnTest.addEventListener('click', e => {
     e.preventDefault();
 
-    const texto = document.getElementById("smth").value;
-
-    fetch("/testando2", {
-        method: "POST",
+    fetch('/testresult', {
+        method: 'POST',
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            texto: texto
+            testMsg: "A conexão está funcionando!"
         })
     })
-    .then(response => response.json())
-    .then(data => {
-        res.innerText = `Texto que você digitou, só que em maiúsculo: ${data.mensagem}`;
-    })
-    .catch(e => {
-        console.error(e);
+        .then(response => response.json())
+        .then(msg => testRes.innerText = msg.resMsg)
+        .catch(e => console.error(e))
     });
-});
+
+

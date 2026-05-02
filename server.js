@@ -8,18 +8,15 @@ app.use(express.static('public'));
 app.use(express.json());
 
 
-app.get('/testando', (req, res) => {
-  res.send('Servidor Express rodando com sucesso!');
-});
-
-app.post('/testando2', (req, res) => {
-  let text = req.body.texto;
-  text = text.toUpperCase();
+app.post('/testresult', (req, res) => {
+  const msg = req.body.testMsg;
 
   res.json({
-    mensagem: text
+    resMsg: msg
   })
 });
+
+
 
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
