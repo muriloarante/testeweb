@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.default-section {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    background-color: rgb(230, 230, 230);
+    padding: 20px;
+    margin-bottom: 50px;
+    border: solid black 2px;
+    min-width: 300px;
+}
+
+input {
+    display: block;
+    margin-bottom: 20px;
+}
+
+#users-list {
+    list-style-type: none;
+}
+
+.user-li {
+    background-color: rgb(255, 255, 255);
+    border: solid black 1px;
+    margin-top: 10px;
+    padding: 2px;
+}

@@ -4,13 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste backend</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Teste de site com backend</h1>
+    
+    <div class="default-section">
+      <button id="btn-test">Teste de conexão</button>
+        <p id="test-res"></p>  
+    </div>
+    
 
-    <button id="btn-test">Teste de conexão</button>
-    <p id="test-res"></p>
 
+    <form action="" id="main-form" class="default-section">
+        <h2>Um formulário</h2>
+
+        <label for="input-name">Nome</label>
+        <input type="text" name="name" id="input-name" placeholder="Fulano de Tal" required>
+
+        <label for="input-email">E-mail</label>
+        <input type="email" name="email" id="input-email" placeholder="fulano.tal@email.com" required>
+        <button type="submit">Cadastrar usuário</button>
+    </form>
+
+    <div class="default-section">
+        <h2>Usuários cadastrados</h2>
+        <button id="btn-show-users">Mostrar todos os usuários cadastrados</button>
+
+        <div id="users-list">
+
+        </div>
+    </div>
+
+
+    
 
     <script src="script.js"></script>
 
