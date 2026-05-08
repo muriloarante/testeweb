@@ -19,6 +19,37 @@ app.post('/testresult', (req, res) => {
 });
 
 
+app.post('/message', (req, res) => {
+  const { name, msg } = req.body;
+
+  try {
+    const stmt = db.prepare(`
+      INSERT INTO messages
+      (user, message)
+      VALUES (?, ?)
+      
+      `)
+      
+      stmt.run(name, msg)
+
+    res.status(200).json({status: "Sucessful."})
+  } catch (err) {
+    res.status(400).json({status: "Bad Request.", error: err})
+  }
+});
+
+
+
+app.post('/messages', (req, res) => {
+  const rows = db.prepare(`
+      SELECT * FROM messages;
+      `).all()
+
+  res.json(rows);
+  
+
+})
+
 
 app.post('/register', (req, res) => {
   const { name, email } = req.body;

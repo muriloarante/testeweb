@@ -25,8 +25,31 @@ input {
 }
 
 .user-li {
+    position: relative;
     background-color: rgb(255, 255, 255);
     border: solid black 1px;
     margin-top: 10px;
     padding: 2px;
+
+    cursor: pointer;
+    transition: ease 200ms;
+}
+
+.user-li:hover {
+    background-color: rgb(255, 105, 105);
+}
+
+.user-li::before {
+    content: 'Excluir';
+    position: absolute;
+    right: 10px;
+    display: none;
+}
+
+.user-li:hover::before {
+    display: block;
+}
+
+.form-chat {
+    margin-bottom: 2px;
 }

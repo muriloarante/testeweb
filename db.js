@@ -11,6 +11,14 @@ db.exec(`
 `);
 
 
+db.exec(`
+    CREATE TABLE IF NOT EXISTS messages (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user TEXT NOT NULL,
+        message TEXT NOT NULL
+    )
+    `)
+
 
 module.exports = db;
 
